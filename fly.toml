@@ -11,7 +11,7 @@ processes = []
   auto_rollback = true
 
 [mounts]
-  destination = "/var/lib/foundationdb/data/4500"
+  destination = "/var/fdb/data/4500"
   source = "foundationdb_4500"
 
 [[services]]
