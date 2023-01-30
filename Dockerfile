@@ -3,7 +3,7 @@ FROM vault:1.12.2
 CMD ["server"]
 
 ENV SKIP_SETCAP=true
-ENV VAULT_LOCAL_CONFIG='{
+ENV VAULT_LOCAL_CONFIG='{\
   "default_lease_ttl": "168h",\
   "listener": [\
     {\
