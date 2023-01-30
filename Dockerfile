@@ -12,5 +12,6 @@ RUN rpm -i foundationdb-clients-7.2.3-1.el7.x86_64.rpm foundationdb-server-7.2.3
 ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini .
 RUN chmod a+x tini
 
+ADD make_public.py /usr/lib/foundationdb/make_public.py
 ADD start.sh ./
 ADD foundationdb.conf /etc/foundationdb/foundationdb.conf
