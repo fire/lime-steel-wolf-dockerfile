@@ -1,4 +1,9 @@
 spec:
+  http_port: 8200
+  envs:
+  - key: SKIP_SETCAP
+    scope: RUN_AND_BUILD_TIME
+    value: true
   name: sample-dockerfile
   services:
   - dockerfile_path: Dockerfile

@@ -6,8 +6,3 @@ services:
     deploy_on_push: true
     repo: fire/gray-tin-vulture-dockerfile
   name: sample-dockerfile
-  http_port: 8200
-  envs:
-  - key: SKIP_SETCAP
-    scope: RUN_AND_BUILD_TIME
-    value: true
