@@ -1,13 +1,22 @@
-name: sample-dockerfile
+alerts:
+- rule: DEPLOYMENT_FAILED
+- rule: DOMAIN_FAILED
+name: oyster-app
+region: tor
 services:
 - dockerfile_path: Dockerfile
-  name: sample-dockerfile
-  http_port: 8200
-  envs:
-  - key: SKIP_SETCAP
-    scope: RUN_AND_BUILD_TIME
-    value: true
   github:
     branch: main
     deploy_on_push: true
     repo: fire/gray-tin-vulture-dockerfile
+  http_port: 8200
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  name: gray-tin-vulture-dockerfile
+  routes:
+  - path: /
+  source_dir: /
+  envs:
+  - key: SKIP_SETCAP
+    scope: RUN_AND_BUILD_TIME
+    value: true
