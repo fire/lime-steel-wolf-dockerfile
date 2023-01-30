@@ -19,4 +19,4 @@ services:
   envs:
   - key: SKIP_SETCAP
     scope: RUN_AND_BUILD_TIME
-    value: true
+    value: "true"
