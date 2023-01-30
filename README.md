@@ -38,3 +38,4 @@ https://developer.hashicorp.com/vault/tutorials/secrets-management/pki-engine
 
 https://developer.hashicorp.com/vault/tutorials/secrets-management/pki-engine#step-1-generate-root-ca
 
+To be continued.
