@@ -31,3 +31,10 @@ echo wcBMA1uLaxpz15I1AQgAe4JWevoDKy5D2NM0yIloFvA4VU6dFEVTxC7X2PBSS6gQW2wSsB6GEqd
 gpg -d token
 # Copy this as the root token
 ```
+
+## How to generate a root certificate authority?
+
+https://developer.hashicorp.com/vault/tutorials/secrets-management/pki-engine
+
+https://developer.hashicorp.com/vault/tutorials/secrets-management/pki-engine#step-1-generate-root-ca
+
