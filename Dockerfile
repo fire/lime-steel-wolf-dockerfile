@@ -1,6 +1,6 @@
 FROM rockylinux:8
 
-RUN yum upgrade -y && yum install -y python3 pkg-config
+RUN yum upgrade -y && yum install -y python3 pkg-config openssl
 WORKDIR /root
 ADD https://github.com/apple/foundationdb/releases/download/7.2.3/foundationdb-clients-7.2.3-1.el7.x86_64.rpm .
 ADD https://github.com/apple/foundationdb/releases/download/7.2.3/foundationdb-server-7.2.3-1.el7.x86_64.rpm .

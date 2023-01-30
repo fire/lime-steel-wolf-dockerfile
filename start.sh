@@ -27,8 +27,10 @@ if [ ! -f /var/lib/foundationdb/fdb.cluster ]
 then
     if [ "$1" = "" ]
     then
+        echo "Generate a certificate."
+        openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/foundationdb/key.pem -out /etc/foundationdb/cert.pem -subj "/C=CA/ST=Vancouver/L=British Columbia/O=Chibifire/CN=$FDB_CLUSTER_ADDRESS"
         echo "Configure new cluster."
-        /usr/lib/foundationdb/make_public.py
+        /usr/lib/foundationdb/make_public.py -t
         cp /etc/foundationdb/fdb.cluster /var/lib/foundationdb/fdb.cluster
         (sleep 1 && fdbcli --no-status --exec "configure new single ssd" &)
     else

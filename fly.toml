@@ -6,8 +6,7 @@ kill_timeout = 5
 processes = []
 
 [env]
-  SKIP_SETCAP = "true"
-  VAULT_LOCAL_CONFIG = "{\"disable_mlock\": true, \"storage\": {\"file\": {\"path\": \"/vault/file\"}}, \"listener\": [{\"tcp\": { \"address\": \"0.0.0.0:8200\", \"tls_disable\": true}}], \"ui\": true}"
+  FDB_CLUSTER_ADDRESS = "wild-sun-2963.fly.dev"
 
 [experimental]
   auto_rollback = true
@@ -18,7 +17,7 @@ processes = []
 
 [[services]]
   http_checks = []
-  internal_port = 8200
+  internal_port = 4600
   processes = ["app"]
   protocol = "tcp"
   script_checks = []
