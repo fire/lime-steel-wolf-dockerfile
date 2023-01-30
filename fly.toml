@@ -1,12 +1,13 @@
-# fly.toml file generated for crimson-wind-7340 on 2023-01-29T18:58:12-08:00
+# fly.toml file generated for bold-leaf-1815 on 2023-01-29T19:19:43-08:00
 
-app = "crimson-wind-7340"
+app = "bold-leaf-1815"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
 [env]
   SKIP_SETCAP = "true"
+  VAULT_LOCAL_CONFIG = "{\"disable_mlock\": true, \"storage\": {\"file\": {\"path\": \"/vault/file\"}}, \"listener\": [{\"tcp\": { \"address\": \"0.0.0.0:8200\", \"tls_disable\": true}}], \"default_lease_ttl\": \"168h\", \"max_lease_ttl\": \"720h\", \"ui\": true}"
 
 [experimental]
   auto_rollback = true
@@ -36,3 +37,7 @@ processes = []
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
+
+[mounts]
+  source="vault_file"
+  destination="/vault/file"
