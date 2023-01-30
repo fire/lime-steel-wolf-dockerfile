@@ -6,3 +6,4 @@ services:
     deploy_on_push: true
     repo: fire/gray-tin-vulture-dockerfile
   name: sample-dockerfile
+  http_port: 8200
