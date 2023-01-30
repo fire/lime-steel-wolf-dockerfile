@@ -1,6 +1,6 @@
 FROM rockylinux:8
 
-RUN yum upgrade -y && yum install -y python3 pkg-config openssl
+RUN yum upgrade -y && yum install -y python3 pkg-config
 WORKDIR /root
 ADD https://github.com/apple/foundationdb/releases/download/7.2.3/foundationdb-clients-7.2.3-1.el7.x86_64.rpm .
 ADD https://github.com/apple/foundationdb/releases/download/7.2.3/foundationdb-server-7.2.3-1.el7.x86_64.rpm .
@@ -12,6 +12,5 @@ RUN rpm -i foundationdb-clients-7.2.3-1.el7.x86_64.rpm foundationdb-server-7.2.3
 ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini .
 RUN chmod a+x tini
 
-ADD make_public.py /usr/lib/foundationdb/make_public.py
 ADD start.sh ./
 ADD foundationdb.conf /etc/foundationdb/foundationdb.conf
