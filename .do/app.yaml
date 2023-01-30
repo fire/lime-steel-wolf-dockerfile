@@ -5,15 +5,10 @@ name: oyster-app
 region: tor
 services:
 - dockerfile_path: Dockerfile
-  envs:
-  - key: SKIP_SETCAP
-    scope: RUN_AND_BUILD_TIME
-    value: "true"
   github:
     branch: main
     deploy_on_push: true
     repo: fire/gray-tin-vulture-dockerfile
-  http_port: 8200
   instance_count: 1
   instance_size_slug: basic-xxs
   name: gray-tin-vulture-dockerfile
